@@ -1,4 +1,5 @@
 #include <iostream>
+#include <ctime>
 
 using namespace std;
 
@@ -13,7 +14,7 @@ void gen(char& gn) {
 	} else if (r == 1) {
 		do {
 			gn = rand() % 26 + 'a';
-		} while (gn != 'c' && gn != 'p' && gn != 's' && gn != 'x');
+		} while (gn == 'c' && gn == 'p' && gn == 's' && gn =='x');
 	} else {
 		s = rand() % 5;
 		gn = symb[s];
@@ -22,6 +23,7 @@ void gen(char& gn) {
 
 int main()
 {
+	srand(time(0));
 	int N;
 	char one, two;
 	int oneCounter = 0, twoCounter = 0, counter = 0;
